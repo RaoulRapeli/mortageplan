@@ -18,10 +18,10 @@ Now you can run the .jar file under \target through terminal. Or run it through 
 It should show the following:
 
 ```bash
-Prospect 1: Juha wants to borrow 1000,00 € for a period of 2 years and pay 210,58€ each month 
-Prospect 2: Karvinen wants to borrow 4356,00 € for a period of 6 years and pay 107,31€ each month 
-Prospect 3: Claes Månsson wants to borrow 1300,55 € for a period of 2 years and pay 470,11€ each month 
-Prospect 4: Clarencé Andersson wants to borrow 2000,00 € for a period of 4 years and pay 250,88€ each month 
+Prospect 1: Juha wants to borrow 1000,00 € for a period of 2 years and pay 42,76€ each month 
+Prospect 2: Karvinen wants to borrow 4356,00 € for a period of 6 years and pay 60,88€ each month 
+Prospect 3: Claes Månsson wants to borrow 1300,55 € for a period of 2 years and pay 56,67€ each month 
+Prospect 4: Clarencé Andersson wants to borrow 2000,00 € for a period of 4 years and pay 42,95€ each month 
 Press Enter key to continue...
 ```
 Click 'Enter' to close the program.
