@@ -18,8 +18,6 @@ import java.text.DecimalFormat;
 
 public class mortageplan {
 
-    
-    
     public static void main(String[] args) {
      
      //new 2D array for the customer values
@@ -84,24 +82,20 @@ public class mortageplan {
             Float years = Float.valueOf(prospects.get(outerCounter).get(3));
             //years to months
             Float months = years * 12;
+            //the yearly intrest
+            Float months_interest = (interest/months)/100;
+            //result in 2 deciamls
+            Float result = 1.0f;
             
-            //counts to the years
-            float counter=1;
-            //intrest from % to decimal
-            float total_interest=(1+(interest/100));
-            //for each year
-           while (counter < years) {
-                total_interest=total_interest*total_interest;
+            while (months != 0) {
+                result = result * (1 + months_interest);
                 // power will get reduced after
                 // each multiplication
-                counter++;
+                months--;
             }//while
-            
-           //total payment
-           float total_payment= total_loan*total_interest;
-          
+
             //the monthly payment
-            float monthlypayment = total_payment/months;
+            float monthlypayment = (total_loan*months_interest*result)/(result-1);
             //makes toatl lones and monthly payment two deciaml values
             DecimalFormat f = new DecimalFormat("##.00");
             //makes years integer
