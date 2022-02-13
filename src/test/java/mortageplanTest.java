@@ -117,7 +117,7 @@ public class mortageplanTest {
     public void testFormula(){
         
         // expected montly payment
-        double expResult=470.1106262207031; 
+        double expResult=63.99339294433594; 
         
         //the amount of total loan
         Float total_loan = Float.valueOf("1300.55");
@@ -127,22 +127,27 @@ public class mortageplanTest {
         Float years = Float.valueOf("2");
         //years to months
         Float months = years * 12;
-        //the monthyl intrest
-        Float monthly_interest = interest / months;
-        //result in 2 deciamls
-        Float result = 1.0f;
 
         
-        while (months != 0) {
-            result = result * (1 + monthly_interest);
-            // power will get reduced after
-            // each multiplication
-            months--;
+        //counter
+        float tempyears=1;
+            //intrest from % to decimal
+            float total_interest=(1+(interest/100));
+            //for each year
+           while (tempyears < years) {
+                total_interest=total_interest*total_interest;
+                // power will get reduced after
+                // each multiplication
+                tempyears++;
+            }//while
             
-        }//while
+           //total payment
+           float total_payment= total_loan*total_interest;
+          
+            //the monthly payment
+            float monthlypayment = total_payment/months;
 
-        //the monthly payment
-        float monthlypayment = (total_loan*monthly_interest*result)/(result-1);
+       
 
         //compares expected and actual monthly payment
         assertEquals(expResult, monthlypayment);
